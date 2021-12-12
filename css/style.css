@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+:root{
+    --black:rgb(26, 1, 93);
+    --light:rgb(31, 29, 29);
+    --green:rgb(31, 255, 11);
+    --box-shadow: 0 .7rem 1rem rgba(0,0,0,.3);
+    --border: .1rem solid rgba(0,0,0,.1);
+}
+
+*{
+    font-family: 'Roboto', sans-serif;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    text-transform: capitalize;
+    transition:.4s linear;
+}
+
+html{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+}
+
+section{
+    padding: 0rem 7%;
+}
+
+body{
+    background: url(../image/photo-1469474968028-56623f02e42e.jfif);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    min-width: 100%;
+   
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    z-index: 1000;
+}
+
+.header .logo a{
+    font-size: 1.5rem;
+    color: var(--black);
+    
+}
+
+.header .nav-bar ul li{
+    position: relative;
+    float: left;
+}
+
+.header .nav-bar ul li a{
+    display: flex;
+    font-size: 1.3rem;
+    color: var(--black);
+    padding: 1rem;
+}
+
+.header .nav-bar ul li a:hover{
+    background: var(--light);
+    color: #fff;
+}
+
+.header .nav-bar ul li a span{
+    font-size: 1.7rem;
+    padding-right: .2rem;
+    padding-left: .2rem;
+}
+
+.header .nav-bar ul li ul{
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    left: 0;
+    display: none;
+}
+
+.header .nav-bar ul li ul li{
+    width: 100%;
+    border-top: var(--border);
+    background: #ddd;
+}
+
+.header .nav-bar ul li ul li ul{
+    left: 8.3rem;
+    top: 0;
+}
+
+.header .nav-bar ul li:focus-within > ul,
+.header .nav-bar ul li:hover > ul{
+    display: initial;
+}
+
+#menu-bar{
+    display: none;
+}
+
+
+
+
+
+
+
+
+@media(max-width:768px){
+
+    section{
+        padding: .7rem 7%;
+    }
+    
+    .header .nav-bar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #fff;
+        display: block;
+        clip-path: polygon(0 0,100% 0, 100% 0%, 0 0);
+    }
+
+    .header .nav-bar ul li{
+        width: 100%;
+        left: 1.6rem;
+        
+    }
+
+    .header .nav-bar ul li a{
+        
+        font-size: 1.1rem;
+        color: var(--black);
+        padding: .5rem;
+    }
+
+    .header .nav-bar ul li a span{
+        font-size: 1.4rem;
+    }
+
+    .header .nav-bar ul li ul{
+       position: relative;
+       width: 100%;
+        
+    }
+
+    .header .nav-bar ul li ul li{
+        background: #ddd;
+        left: 0;
+    }
+
+    .header .nav-bar ul li ul li ul{
+        
+        width: 100%;
+        left: 0;
+
+    }
+
+    #menu-bar.fa-times{
+        transform: rotate(180deg);
+    }
+
+    #menu-bar{
+        font-size: 1.5rem;
+        display: block;
+        cursor: pointer;
+       
+        
+    }
+
+    .header .nav-bar.active{
+        clip-path: polygon(0 0,100% 0, 100% 100%, 0 100%);
+        
+    }
+
+    
+
+    
+}
